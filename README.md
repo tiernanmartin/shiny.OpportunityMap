@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/tiernanmartin/shiny.OpportunityMap/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Opportunity Map
+---------------
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This project brings together information about upcoming changes to a neighborhood and overlays past visions and plans created by the community.
 
-### Markdown
+This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The App
+-------
 
-```markdown
-Syntax highlighted code block
+The app is written in R and published to the free tier of RStudio's Shinyapps.io server. The app can be run locally by downloading this Github repository and running the provided `launch_application()` function:
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+``` r
+devtools::install_github('tiernanmartin/shiny.OpportunityMap')
+launch_app(pkg_name = 'shiny.OpportunityMap')
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+User Guide
+----------
 
-### Jekyll Themes
+*add details here*
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tiernanmartin/shiny.OpportunityMap/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+App Directory
+-------------
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    ##                         levelName
+    ## 1  shiny.OpportunityMap          
+    ## 2   ¦--_config.yml               
+    ## 3   ¦--DESCRIPTION               
+    ## 4   ¦--inst                      
+    ## 5   ¦   °--application           
+    ## 6   ¦       ¦--global.R          
+    ## 7   ¦       ¦--server.R          
+    ## 8   ¦       °--ui.R              
+    ## 9   ¦--LICENSE                   
+    ## 10  ¦--NAMESPACE                 
+    ## 11  ¦--README.md                 
+    ## 12  ¦--README.Rmd                
+    ## 13  °--shiny.OpportunityMap.Rproj

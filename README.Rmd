@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(stringr)
+library(data.tree)
+```
+
+## Opportunity Map
+
+This project brings together information about upcoming changes to a neighborhood and overlays past visions and plans created by the community.
+
+This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
+
+## The App
+
+The app is written in R and published to the free tier of RStudio's Shinyapps.io server. The app can be run locally by downloading this Github repository and running the provided `launch_application()` function:
+
+```{r launch, eval=FALSE}
+
+devtools::install_github('tiernanmartin/shiny.OpportunityMap')
+launch_app(pkg_name = 'shiny.OpportunityMap')
+
+```
+
+## User Guide
+
+_add details here_
+
+## App Directory
+
+```{r directory, echo = FALSE}
+list.files( path = ".",  recursive = TRUE, include.dirs = FALSE) %>% { 
+  bind_cols(
+    tibble(
+    pathString = map_chr(.,~ str_c("shiny.OpportunityMap",.x, sep = "/"))
+  ),
+  file.info(str_c(".",.,sep = "/"))
+  )
+} %>% 
+  as.data.frame() %>% 
+  data.tree::as.Node(mode = "table") %>%
+  print(limit = 25)
+```
+
