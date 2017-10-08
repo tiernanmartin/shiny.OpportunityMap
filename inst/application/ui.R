@@ -30,32 +30,34 @@ sidebar <- dashboardSidebar(
 )
 # BODY ----
 
-body <- shmodules::fluidDashboardBody(sidebarCollapsed = FALSE,
-                                      tabItems(
-                                        tabItemContentUI_map(id = "map",tab_name = "map"),
-                                        tabItem(tabName = "lists",
-                                                fluidPage(
-                                                  fluidRow(
-                                                    tabItemContentUI_list(id = "priorities",
-                                                                          box_title = "Priorities"),
-                                                    tabItemContentUI_list(id = "change_pri",
-                                                                          box_title = "Changes (Private)",
-                                                                          box_status = "warning" ),
-                                                    tabItemContentUI_list(id = "change_pub",
-                                                                          box_title = "Changes (Public)",
-                                                                          box_status = "danger" ),
-                                                    tagList(
-                                                      box(width = 6, title = "",
-                                                          projectCardUI("list_proj_card")
-                                                      )
-                                                    )
-                                                  )
-                                                )
-                                        ),
-                                        tabItemContentUI_table(id = "table",tab_name = "table"),
-                                        tabItemContentUI_documents(id = "documents",tab_name = "documents"),
-                                        tabItemContentUI_about(id = "about",tab_name = "about")
-                                      )
-)
+body <-
+  fluidDashboardBody(
+    sidebarCollapsed = FALSE,
+    tabItems(
+      tabItemContentUI_map(id = "map",tab_name = "map"),
+      tabItem(tabName = "lists",
+              fluidPage(
+                fluidRow(
+                  tabItemContentUI_list(id = "priorities",
+                                        box_title = "Priorities"),
+                  tabItemContentUI_list(id = "change_pri",
+                                        box_title = "Changes (Private)",
+                                        box_status = "warning" ),
+                  tabItemContentUI_list(id = "change_pub",
+                                        box_title = "Changes (Public)",
+                                        box_status = "danger" ),
+                  tagList(
+                    box(width = 6, title = "",
+                        projectCardUI("list_proj_card")
+                    )
+                  )
+                )
+              )
+      ),
+      tabItemContentUI_table(id = "table",tab_name = "table"),
+      tabItemContentUI_documents(id = "documents",tab_name = "documents"),
+      tabItemContentUI_about(id = "about",tab_name = "about")
+    )
+  )
 # UI ----
 ui <- dashboardPage(header,sidebar,body, skin = 'yellow')

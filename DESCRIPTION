@@ -12,5 +12,8 @@ RoxygenNote: 6.0.1
 Imports: 
    shiny (>= 1.0),
    htmltools,
-   stringr
+   stringr,
+   leaflet (>= 1.1),
+   shmodules,
+   miscgis
 

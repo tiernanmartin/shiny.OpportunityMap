@@ -3,6 +3,7 @@
 library(shiny.OpportunityMap)
 library(gplots)
 library(shiny)
+library(htmltools)
 library(shmodules)
 library(miscgis)
 library(tidyverse)
@@ -35,20 +36,7 @@ boxed_radio_subgroup <- function(inputId, id, label, choices, inline = FALSE) {
   radioButtons(inputId, label, choices, selected = character(0), inline = inline)
 }
 
-tabItemContentUI_map <- function(id, tab_name){
 
-  ns <- NS(id)
-
-  tabItem(tabName = tab_name,
-          tags$head(tags$style(HTML("section.content{padding:0px;}
-                                    .outer { height: calc(100vh - 50px); padding: 0px; margin: 0; }"))),
-          tags$div(class = "outer",
-                   leafletOutput(ns("map"),
-                                 height = "100%",
-                                 width = "100%")
-                   )
-          )
-}
 
 tabItemContentUI_list <- function(id, box_width = 2, box_title = "", box_status = "primary"){
 
@@ -113,15 +101,6 @@ projectCardUI <- function(id){
 
 # SERVER MODULES ----
 # note: these should all become functions eventually
-
-tabItemContent_map <- function(input, output, session){
-
-  ns <- session$ns
-
-  output$map <- renderLeaflet({ myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
-    })
-
-}
 
 tabItemContent_list <- function(input, output, session, choices = LETTERS){
    output$radio_list <- renderUI({
