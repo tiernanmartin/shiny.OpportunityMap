@@ -69,26 +69,7 @@ tabItemContentUI_documents <- function(id, tab_name){
   )
 }
 
-tabItemContentUI_about <- function(id, tab_name){
 
-  ns <- NS(id)
-  tabItem(tab_name,
-          fluidPage(
-            fluidRow(
-              column(3),
-              column(6,
-                     box(width = 12, title = "About", status = "primary",
-                         uiOutput(ns("about"))
-                         )
-                     ),
-              column(3)
-
-            )
-
-          )
-
-  )
-}
 
 projectCardUI <- function(id){
   ns <- NS(id)
@@ -119,12 +100,4 @@ tabItemContent_list <- function(input, output, session, choices = LETTERS){
 
 }
 
-tabItemContent_about <- function(input, output, session){
 
-  ns <- session$ns
-
-  content <- includeHTML("./www/about.html")
-
-  output$about <- renderUI({content})
-
-}
