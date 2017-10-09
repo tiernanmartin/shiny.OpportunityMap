@@ -6,13 +6,13 @@
 #' @param session shiny session
 #' @seealso \code{\link{tabItemContentUI_map}}
 #' @import leaflet
-#' @importFrom miscgis "myLflt"
+#' @importFrom shmodules "myLflt"
 #' @export
 tabItemContent_map <- function(input, output, session){
 
   ns <- session$ns
 
-  output$map <- renderLeaflet({ miscgis::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
+  output$map <- renderLeaflet({ shmodules::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
     })
 
 }
