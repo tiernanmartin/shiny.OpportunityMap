@@ -29,14 +29,6 @@ p_sf <- read_rds('./www/priorities_sf.rds')
 # UI MODULES ----
 # note: these should all become functions eventually
 
-boxed_radio_subgroup <- function(inputId, id, label, choices, inline = FALSE) {
-  values <- paste0(id, "-", choices)
-  choices <- setNames(values, choices)
-
-  radioButtons(inputId, label, choices, selected = character(0), inline = inline)
-}
-
-
 
 tabItemContentUI_list <- function(id, box_width = 2, box_title = "", box_status = "primary"){
 
@@ -83,21 +75,9 @@ projectCardUI <- function(id){
 # SERVER MODULES ----
 # note: these should all become functions eventually
 
-tabItemContent_list <- function(input, output, session, choices = LETTERS){
-   output$radio_list <- renderUI({
-      radioButtons(inputId = session$ns("btn"),
-                 label = NULL,
-                 choices = choices,
-                 selected = character(0))
-   })
-
-   radio_sel <- reactive({input[[session$ns("btn")]]})
-
-    observeEvent(radio_sel(), {
-      showNotification("Message text")
-    })
 
 
-}
+
+
 
 

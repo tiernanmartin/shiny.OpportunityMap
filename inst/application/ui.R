@@ -29,7 +29,6 @@ sidebar <- dashboardSidebar(
   HTML("</div>")
 )
 # BODY ----
-
 body <-
   fluidDashboardBody(
     sidebarCollapsed = FALSE,
@@ -37,26 +36,22 @@ body <-
       tabItemContentUI_map(id = "map",tab_name = "map"),
       tabItem(tabName = "lists",
               fluidPage(
-                fluidRow(
-                  tabItemContentUI_list(id = "priorities",
-                                        box_title = "Priorities"),
-                  tabItemContentUI_list(id = "change_pri",
-                                        box_title = "Changes (Private)",
-                                        box_status = "warning" ),
-                  tabItemContentUI_list(id = "change_pub",
-                                        box_title = "Changes (Public)",
-                                        box_status = "danger" ),
-                  tagList(
-                    box(width = 6, title = "",
-                        projectCardUI("list_proj_card")
-                    )
-                  )
+                column(6,
+                       uiOutput("radio_group")
+                ),
+                column(6,
+                       tagList(
+                         box(width = 12, title = "Project Card",
+                             projectCardUI("list_proj_card")
+                         )
+                       )
                 )
               )
       ),
       tabItemContentUI_table(id = "table",tab_name = "table"),
       tabItemContentUI_documents(id = "documents",tab_name = "documents"),
-      tabItemContentUI_about(id = "about",tab_name = "about")
+      tabItemContentUI_about(id = "about",tab_name = "about"),
+      tabItem("") # note: this is just to prevent the "absent comma"
     )
   )
 # UI ----
