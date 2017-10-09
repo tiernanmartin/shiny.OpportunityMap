@@ -5,15 +5,15 @@ Description: This app is currently focused on a single neighborhood: Chinatown I
 Version: 0.1.1
 Author: Tiernan Martin 
 Maintainer: Tiernan Martin <tiernan.martin@gmail.com>
-License: MIT License
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Imports: 
    shiny (>= 1.0),
+   shinydashboard (>= 0.6.1),
    htmltools,
    stringr,
    leaflet (>= 1.1),
-   shmodules,
-   miscgis
+   shmodules
 
