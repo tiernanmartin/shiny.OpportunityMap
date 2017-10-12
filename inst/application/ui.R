@@ -4,7 +4,8 @@ header <- dashboardHeader(title = "CID Opportunity Explorer",titleWidth = "350px
 sidebar <- dashboardSidebar(
   width = "350px",
   shmodules::sidebarCSS(),
-  sidebarSearchForm(textId = "searchText", buttonId = "searchButton",
+  sidebarSearchForm(textId = "searchText",
+                    buttonId = "searchButton",
                     label = "Search..."),
   sidebarMenu(id = 'menu',
               menuItem("Community Priorties & Coming Changes",

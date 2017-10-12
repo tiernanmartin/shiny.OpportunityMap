@@ -1,12 +1,17 @@
-#' Shiny Module: About text in a shinydashboard box.
-#'
-#' This is the UI portion of this module.
+#' @title Shiny Module: About text in a shinydashboard box.
+#' @description About text in a shinydashboard box.
+#' @name mod_about
 #' @param id Output id
 #' @param tab_name Name of the tab panel
+#' @param input shiny input
+#' @param output shiny output
+#' @param session shiny session
 #' @import shiny
-#' @import htmltools
 #' @import shinydashboard
-#' @seealso \code{\link{tabItemContent_about}}
+#' @import htmltools
+NULL
+
+#' @rdname mod_about
 #' @export
 tabItemContentUI_about <- function(id, tab_name){
 
@@ -27,4 +32,16 @@ tabItemContentUI_about <- function(id, tab_name){
           )
 
   )
+}
+
+#' @rdname mod_about
+#' @export
+tabItemContent_about <- function(input, output, session){
+
+  ns <- session$ns
+
+  content <- includeHTML("./www/about.html")
+
+  output$about <- renderUI({content})
+
 }

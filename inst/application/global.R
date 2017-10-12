@@ -30,17 +30,6 @@ p_sf <- read_rds('./www/priorities_sf.rds')
 # note: these should all become functions eventually
 
 
-tabItemContentUI_list <- function(id, box_width = 2, box_title = "", box_status = "primary"){
-
-  ns <- NS(id)
-
-  tagList(
-    box(width = box_width, title = box_title, status = box_status, collapsible = TRUE,
-        uiOutput(ns("radio_list"))
-    )
-  )
-}
-
 tabItemContentUI_table <- function(id, tab_name){
 
   ns <- NS(id)

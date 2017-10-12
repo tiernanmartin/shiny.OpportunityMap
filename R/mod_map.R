@@ -1,11 +1,19 @@
 #' Shiny Module: fullscreen leaflet map in a tab panel
 #'
-#' This is the UI portion of this module.
+#' A fullscreen leaflet map in a tab panel.
+#' @name mod_map
 #' @param id Output id
 #' @param tab_name Name of the tab panel
+#' @param input shiny input
+#' @param output shiny output
+#' @param session shiny session
 #' @import shiny
 #' @import htmltools
-#' @seealso \code{\link{tabItemContent_map}}
+#' @import leaflet
+#' @importFrom shmodules "myLflt"
+NULL
+
+#' @rdname mod_map
 #' @export
 tabItemContentUI_map <- function(id, tab_name){
 
@@ -20,4 +28,15 @@ tabItemContentUI_map <- function(id, tab_name){
                                  width = "100%")
                    )
           )
+}
+
+#' @rdname mod_map
+#' @export
+tabItemContent_map <- function(input, output, session){
+
+  ns <- session$ns
+
+  output$map <- renderLeaflet({ shmodules::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
+    })
+
 }
