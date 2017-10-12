@@ -40,7 +40,7 @@ tabItemContent_about <- function(input, output, session){
 
   ns <- session$ns
 
-  content <- includeHTML("./www/about.html")
+  content <- includeHTML("./www/content/about.html")
 
   output$about <- renderUI({content})
 

@@ -23,7 +23,7 @@ proj_orange <- '#D59C40'
 
 # DATA ----
 
-p_sf <- read_rds('./www/priorities_sf.rds')
+p_sf <- read_rds('./www/data/priorities_sf.rds')
 
 
 # UI MODULES ----

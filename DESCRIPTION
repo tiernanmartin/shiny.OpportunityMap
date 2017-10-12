@@ -2,7 +2,7 @@ Package: shiny.OpportunityMap
 Type: Package
 Title: A shiny app for exploring past plans and upcoming changes in Seattle, WA
 Description: This app is currently focused on a single neighborhood: Chinatown ID.
-Version: 0.1.2-1
+Version: 0.1.2-2
 Author: Tiernan Martin 
 Maintainer: Tiernan Martin <tiernan.martin@gmail.com>
 License: MIT + file LICENSE
