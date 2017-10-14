@@ -1,7 +1,7 @@
 #' UI Function: grouped radio button within a Shinydashboard box
 #'
 #' This is a radio button UI element that can be linked to others.
-#' @param inputId The input slot that will be used to access the value.
+#' @param input_id The input slot that will be used to access the value.
 #' @param id The id for button list (should be unique within the group).
 #' @param box_status The status of the item This determines the item's background color (see \code{\link[shinydashboard]{box}}).
 #' @param box_title Title for the container box (optional).
@@ -13,13 +13,13 @@
 #' @import shiny
 #' @import shinydashboard
 #' @export
-boxed_radio_subgroup <- function(inputId, id, box_title = "", box_status = "primary", label = "", choices = NULL, inline = FALSE,box_width = 4) {
+boxed_radio_subgroup <- function(input_id, id, box_title = "", box_status = "primary", label = "", choices = NULL, inline = FALSE,box_width = 4) {
   values <- paste0(id, "-", choices)
   choices <- setNames(values, choices)
 
   tagList(
     box(width = box_width, title = box_title, status = box_status, collapsible = TRUE,
-        radioButtons(inputId, label, choices, selected = character(0), inline = inline)
+        radioButtons(input_id, label, choices, selected = character(0), inline = inline)
     )
   )
 }

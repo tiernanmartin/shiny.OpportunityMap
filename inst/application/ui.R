@@ -35,20 +35,7 @@ body <-
     sidebarCollapsed = FALSE,
     tabItems(
       tabItemContentUI_map(id = "map",tab_name = "map"),
-      tabItem(tabName = "lists",
-              fluidPage(
-                column(6,
-                       uiOutput("radio_group")
-                ),
-                column(6,
-                       tagList(
-                         box(width = 12, title = "Project Card",
-                             projectCardUI("list_proj_card")
-                         )
-                       )
-                )
-              )
-      ),
+      tabItemContentUI_lists(id = "lists", tab_name = "lists"),
       tabItemContentUI_table(id = "table",tab_name = "table"),
       tabItemContentUI_documents(id = "documents",tab_name = "documents"),
       tabItemContentUI_about(id = "about",tab_name = "about"),

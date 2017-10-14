@@ -13,7 +13,7 @@ tabItemContent_map(input, output, session)
 \arguments{
 \item{id}{Output id}
 
-\item{tab_name}{Name of the tab panel}
+\item{tab_name}{Name of the tab panel.}
 
 \item{input}{shiny input}
 
