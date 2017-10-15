@@ -29,38 +29,6 @@ p_sf <- read_rds('./www/data/priorities_sf.rds')
 # UI MODULES ----
 # note: these should all become functions eventually
 
-
-tabItemContentUI_table <- function(id, tab_name){
-
-  ns <- NS(id)
-
-  tabItem(tab_name,
-          box(title = "Table", status = "primary")
-
-  )
-
-}
-
-tabItemContentUI_documents <- function(id, tab_name){
-
-  ns <- NS(id)
-  tabItem(tab_name,
-          box(title = "Docs", status = "primary")
-
-  )
-}
-
-
-
-projectCardUI <- function(id){
-  ns <- NS(id)
-
-  tagList(
-    br()  # project card template goes here
-  )
-}
-
-
 # SERVER MODULES ----
 # note: these should all become functions eventually
 
