@@ -4,7 +4,7 @@
 \alias{mod_lists}
 \alias{tabItemContentUI_lists}
 \alias{tabItemContent_lists}
-\title{Shiny Module:_grouped radio button within a Shinydashboard box}
+\title{Shiny Module: grouped radio button within a Shinydashboard box}
 \usage{
 tabItemContentUI_lists(id, tab_name)
 

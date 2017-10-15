@@ -15,19 +15,18 @@ sidebar <- dashboardSidebar(
                        menuSubItem("Map",tabName = "map",icon = icon("globe", lib = "font-awesome")),
                        menuSubItem("Lists",tabName = "lists",icon = icon("list-ul", lib = "font-awesome")),
                        menuSubItem("Table",tabName = "table",icon = icon("table", lib = "font-awesome")),
-                       menuSubItem("Documents", tabName = "documents", icon = icon("book", lib = "font-awesome")),
-                       br()
+                       menuSubItem("Documents", tabName = "documents", icon = icon("book", lib = "font-awesome"))
                        ),
               menuItem("About", tabName = "about", icon = icon("question-circle", lib = "font-awesome"))
+  ),
+  sidebar_bottom(
+    condUI_filters(tab_names = c("map", "lists"))
   ),
   tags$style(HTML("p{font-size: 12px;}
                         #barmap1-var_text{background-color: #1e282c;margin-top: 15px;}
                         #searchButton{margin:0px;}
                         .sidebar-form {border:0px !important;}
-                        .container-fluid {padding:15px !important}")),
-  HTML("<hr style='margin: 5px;height:1px;border-width:0;color:#404040;background-color:#404040'>"),
-  HTML("<div style='padding-right: 25px;padding-left: 25px;'>"),
-  HTML("</div>")
+                        .container-fluid {padding:15px !important}"))
 )
 # BODY ----
 body <-
