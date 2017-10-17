@@ -26,7 +26,7 @@ sidebar <- dashboardSidebar(
                         #barmap1-var_text{background-color: #1e282c;margin-top: 15px;}
                         #searchButton{margin:0px;}
                         .sidebar-form {border:0px !important;}
-                        .container-fluid {padding:15px !important}"))
+                        .container-fluid, .container {padding:15px !important}"))
 )
 # BODY ----
 body <-

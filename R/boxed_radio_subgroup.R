@@ -13,13 +13,16 @@
 #' @import shiny
 #' @import shinydashboard
 #' @export
-boxed_radio_subgroup <- function(input_id, id, box_title = "", box_status = "primary", label = "", choices = NULL, inline = FALSE,box_width = 4) {
+boxed_radio_subgroup <- function(input_id, id, box_title = "", box_status = "primary", label = "", choices = NULL, inline = FALSE,box_width = NULL) {
   values <- paste0(id, "-", choices)
   choices <- setNames(values, choices)
 
   tagList(
-    box(width = box_width, title = box_title, status = box_status, collapsible = TRUE,
-        radioButtons(input_id, label, choices, selected = character(0), inline = inline)
+    column(width = 2,
+           box(width = box_width, title = box_title, status = box_status, collapsible = TRUE,
+               radioButtons(input_id, label, choices, selected = character(0), inline = inline)
+           )
+
     )
   )
 }

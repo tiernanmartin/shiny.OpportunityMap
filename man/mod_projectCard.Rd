@@ -2,13 +2,13 @@
 % Please edit documentation in R/mod_projectCard.R
 \name{mod_projectCard}
 \alias{mod_projectCard}
-\alias{tabItemContentUI_projectCard}
-\alias{tabItemContent_projectCard}
+\alias{projectCardUI}
+\alias{projectCard}
 \title{Shiny Module: Project Card}
 \usage{
-tabItemContentUI_projectCard(id)
+projectCardUI(id)
 
-tabItemContent_projectCard(input, output, session)
+projectCard(input, output, session)
 }
 \arguments{
 \item{id}{Output id}
@@ -18,8 +18,6 @@ tabItemContent_projectCard(input, output, session)
 \item{output}{shiny output}
 
 \item{session}{shiny session}
-
-\item{tab_name}{Name of the tab panel}
 }
 \description{
 Project Card

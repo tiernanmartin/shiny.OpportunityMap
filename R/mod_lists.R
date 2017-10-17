@@ -8,6 +8,8 @@
 #' @param session shiny session
 #' @import shiny
 #' @import htmltools
+#' @import slickR
+#' @importFrom shmodules "padded_div"
 NULL
 
 #' @rdname mod_lists
@@ -16,19 +18,29 @@ tabItemContentUI_lists <- function(id, tab_name){
   ns <- NS(id)
 
   tabItem(tabName = tab_name,
-              fluidPage(
-                column(6,
-                       uiOutput(ns("radio_group"))
-                ),
-                column(6,
-                       tagList(
-                         box(width = 12, title = "Project Card",
-                             # projectCardUI("list_proj_card"),
-                             br()
-                         )
-                       )
-                )
+          fixedPage(
+            fixedRow(
+              uiOutput(ns("radio_group")),
+              column(6,
+                     box(width = NULL,
+                         padded_div(projectCardUI(ns("list_proj_card")),pad_bottom = 0)
+
+                     )
               )
+            )
+          )
+              # fluidPage(
+              #   column(6,
+              #          uiOutput(ns("radio_group"))
+              #   ),
+              #   column(6,
+              #          tagList(
+              #            box(width = 12, title = "Project Card",
+              #                projectCardUI(ns("list_proj_card"))
+              #            )
+              #          )
+              #   )
+              # )
       )
 }
 
@@ -38,12 +50,18 @@ tabItemContent_lists <- function(input, output, session){
 
   ns <- session$ns
 
+  # browser()
+
+  callModule(module = shiny.OpportunityMap::projectCard, id = "list_proj_card")
+
   output$radio_group <- renderUI({
     tagList(
-      boxed_radio_subgroup(input_id = ns("radio_group"), id = "first", box_title = "First",choices = LETTERS[1:10]),
-      boxed_radio_subgroup(input_id = ns("radio_group"), id = "second",box_title = "Second",choices = 1:10),
-      boxed_radio_subgroup(input_id = ns("radio_group"), id = "third",box_title = "Third",choices = rownames(mtcars)[1:10])
+      boxed_radio_subgroup(input_id = ns("radio_group"), id = "first", box_title = "First", choices = LETTERS[1:10]),
+      boxed_radio_subgroup(input_id = ns("radio_group"), id = "second",box_title = "Second", choices = 1:10),
+      boxed_radio_subgroup(input_id = ns("radio_group"), id = "third",box_title = "Third" ,choices = rownames(mtcars)[1:10])
     )
   })
+
+
 
 }

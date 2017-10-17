@@ -5,7 +5,7 @@
 \title{UI Function: grouped radio button within a Shinydashboard box}
 \usage{
 boxed_radio_subgroup(input_id, id, box_title = "", box_status = "primary",
-  label = "", choices = NULL, inline = FALSE, box_width = 4)
+  label = "", choices = NULL, inline = FALSE, box_width = NULL)
 }
 \arguments{
 \item{input_id}{The input slot that will be used to access the value.}
