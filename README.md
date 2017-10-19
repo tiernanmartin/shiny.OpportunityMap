@@ -28,16 +28,13 @@ App Directory
 
     ##                  levelName
     ## 1  shiny.OpportunityMap   
-    ## 2   ¦--DESCRIPTION        
-    ## 3   ¦--inst               
-    ## 4   ¦   °--application    
-    ## 5   ¦       °--www        
-    ## 6   ¦           ¦--content
-    ## 7   ¦           ¦--css    
-    ## 8   ¦           ¦--data   
-    ## 9   ¦           °--images 
-    ## 10  ¦--LICENSE            
-    ## 11  ¦--man                
-    ## 12  ¦--NAMESPACE          
-    ## 13  °--R                  
-    ## 14      °--tmp
+    ## 2   ¦--inst               
+    ## 3   ¦   °--application    
+    ## 4   ¦       °--www        
+    ## 5   ¦           ¦--content
+    ## 6   ¦           ¦--css    
+    ## 7   ¦           ¦--data   
+    ## 8   ¦           °--images 
+    ## 9   ¦--man                
+    ## 10  °--R                  
+    ## 11      °--tmp

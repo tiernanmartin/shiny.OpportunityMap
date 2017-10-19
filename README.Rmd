@@ -44,6 +44,7 @@ list.files( path = ".",  recursive = TRUE, include.dirs = TRUE) %>% {
   )
 } %>% 
   filter(!str_detect(pathString,"\\.[[:alpha:]]+$")) %>% 
+  filter(!str_detect(pathString, "DESCRIPTION|LICENSE|NAMESPACE")) %>% 
   as.data.frame() %>% 
   data.tree::as.Node(mode = "table") %>%
   print(pruneMethod ="simple", limit = 25)
