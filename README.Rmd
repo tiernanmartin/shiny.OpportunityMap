@@ -35,7 +35,7 @@ _add details here_
 ## App Directory
 
 ```{r directory, echo = FALSE}
-list.files( path = ".",  recursive = TRUE, include.dirs = FALSE) %>% { 
+list.files( path = ".",  recursive = TRUE, include.dirs = TRUE) %>% { 
   bind_cols(
     tibble(
     pathString = map_chr(.,~ str_c("shiny.OpportunityMap",.x, sep = "/"))
@@ -43,8 +43,9 @@ list.files( path = ".",  recursive = TRUE, include.dirs = FALSE) %>% {
   file.info(str_c(".",.,sep = "/"))
   )
 } %>% 
+  filter(!str_detect(pathString,"\\.[[:alpha:]]+$")) %>% 
   as.data.frame() %>% 
   data.tree::as.Node(mode = "table") %>%
-  print(limit = 25)
+  print(pruneMethod ="simple", limit = 25)
 ```
 
