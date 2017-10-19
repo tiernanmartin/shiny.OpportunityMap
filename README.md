@@ -16,6 +16,8 @@ devtools::install_github('tiernanmartin/shiny.OpportunityMap')
 launch_app(pkg_name = 'shiny.OpportunityMap')
 ```
 
+![](./inst/application/www/images/opp-map-ss-01.PNG)
+
 User Guide
 ----------
 
@@ -24,17 +26,30 @@ User Guide
 App Directory
 -------------
 
-    ##                         levelName
-    ## 1  shiny.OpportunityMap          
-    ## 2   ¦--_config.yml               
-    ## 3   ¦--DESCRIPTION               
-    ## 4   ¦--inst                      
-    ## 5   ¦   °--application           
-    ## 6   ¦       ¦--global.R          
-    ## 7   ¦       ¦--server.R          
-    ## 8   ¦       °--ui.R              
-    ## 9   ¦--LICENSE                   
-    ## 10  ¦--NAMESPACE                 
-    ## 11  ¦--README.md                 
-    ## 12  ¦--README.Rmd                
-    ## 13  °--shiny.OpportunityMap.Rproj
+    ##                                levelName
+    ## 1  shiny.OpportunityMap                 
+    ## 2   ¦--_config.yml                      
+    ## 3   ¦--DESCRIPTION                      
+    ## 4   ¦--inst                             
+    ## 5   ¦   °--application                  
+    ## 6   ¦       ¦--global.R                 
+    ## 7   ¦       ¦--server.R                 
+    ## 8   ¦       ¦--ui.R                     
+    ## 9   ¦       °--www                      
+    ## 10  ¦           ¦--content              
+    ## 11  ¦           ¦   ¦--about.html       
+    ## 12  ¦           ¦   °--about.Rmd        
+    ## 13  ¦           ¦--data                 
+    ## 14  ¦           ¦   °--priorities_sf.rds
+    ## 15  ¦           °--images               
+    ## 16  ¦               °--opp-map-ss-01.PNG
+    ## 17  ¦--LICENSE                          
+    ## 18  ¦--man                              
+    ## 19  ¦   ¦--boxed_radio_subgroup.Rd      
+    ## 20  ¦   ¦--launch_app.Rd                
+    ## 21  ¦   ¦--mod_about.Rd                 
+    ## 22  ¦   ¦--mod_documents.Rd             
+    ## 23  ¦   ¦--mod_filters.Rd               
+    ## 24  ¦   ¦--mod_lists.Rd                 
+    ## 25  ¦   °--... 4 nodes w/ 0 sub         
+    ## 26  °--... 5 nodes w/ 19 sub

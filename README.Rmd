@@ -26,6 +26,8 @@ launch_app(pkg_name = 'shiny.OpportunityMap')
 
 ```
 
+![](./inst/application/www/images/opp-map-ss-01.PNG)
+
 ## User Guide
 
 _add details here_
