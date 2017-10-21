@@ -1,19 +1,22 @@
 ---
-output: github_document
+output: html_document
+always_allow_html: yes
 ---
 
-```{r setup, include=FALSE}
+```{r setup, echo=FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(stringr)
 library(data.tree)
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 ## Opportunity Map
 
 This project brings together information about upcoming changes to a neighborhood and overlays past visions and plans created by the community.
 
-This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
+<i class="fa fa-exclamation-triangle"></i>  This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
 
 #### The App
 

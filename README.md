@@ -4,7 +4,7 @@ Opportunity Map
 
 This project brings together information about upcoming changes to a neighborhood and overlays past visions and plans created by the community.
 
-This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
+<i class="fa fa-exclamation-triangle"></i> This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
 
 #### The App
 
