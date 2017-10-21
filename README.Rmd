@@ -15,7 +15,7 @@ This project brings together information about upcoming changes to a neighborhoo
 
 This is intended to be a proof of concept not a finished product. Please note that it is not yet suitable for public distribution.
 
-## The App
+#### The App
 
 The app is written in R and published to the free tier of RStudio's Shinyapps.io server. The app can be run locally by downloading this Github repository and running the provided `launch_application()` function:
 
@@ -28,25 +28,40 @@ launch_app(pkg_name = 'shiny.OpportunityMap')
 
 ![](./inst/application/www/images/opp-map-ss-01.PNG)
 
-## User Guide
+#### User Guide
 
 _add details here_
 
-## App Directory
+#### App Directory
+
+    .
+    ├── inst/
+    │   └── application/
+    │       ├── global.R
+    │       ├── server.R
+    │       ├── ui.R
+    │       └── www/
+    │           ├── content/
+    │           ├── data/
+    │           ├── css/
+    │           └── images/
+    ├── man/
+    └── R/
 
 ```{r directory, echo = FALSE}
-list.files( path = ".",  recursive = TRUE, include.dirs = TRUE) %>% { 
-  bind_cols(
-    tibble(
-    pathString = map_chr(.,~ str_c("shiny.OpportunityMap",.x, sep = "/"))
-  ),
-  file.info(str_c(".",.,sep = "/"))
-  )
-} %>% 
-  filter(!str_detect(pathString,"\\.[[:alpha:]]+$")) %>% 
-  filter(!str_detect(pathString, "DESCRIPTION|LICENSE|NAMESPACE")) %>% 
-  as.data.frame() %>% 
-  data.tree::as.Node(mode = "table") %>%
-  print(pruneMethod ="simple", limit = 25)
+# list.files( path = ".",  recursive = TRUE, include.dirs = TRUE) %>% { 
+#   bind_cols(
+#     tibble(
+#     pathString = map_chr(.,~ str_c("shiny.OpportunityMap",.x, sep = "/"))
+#   ),
+#   file.info(str_c(".",.,sep = "/"))
+#   )
+# } %>% 
+#   filter(!str_detect(pathString,"\\.[[:alpha:]]+$")) %>% 
+#   filter(!str_detect(pathString, "DESCRIPTION|LICENSE|NAMESPACE")) %>% 
+#   as.data.frame() %>% 
+#   data.tree::as.Node(mode = "table") %>%
+#   print(pruneMethod ="simple", limit = 25)
+
 ```
 
