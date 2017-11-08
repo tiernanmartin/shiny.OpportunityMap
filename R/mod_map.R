@@ -6,10 +6,12 @@
 #' @param tab_name Name of the tab panel.
 #' @param input shiny input
 #' @param output shiny output
+#' @param data simple feature object to map
 #' @param session shiny session
 #' @import shiny
 #' @import htmltools
 #' @import leaflet
+#' @import mapview
 #' @importFrom shmodules "myLflt"
 NULL
 
@@ -32,11 +34,24 @@ tabItemContentUI_map <- function(id, tab_name){
 
 #' @rdname mod_map
 #' @export
-tabItemContent_map <- function(input, output, session){
+tabItemContent_map <- function(input, output, data, session){
 
   ns <- session$ns
 
-  output$map <- renderLeaflet({ shmodules::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
+  output$map <- renderLeaflet({
+    # shmodules::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
+    pts <-
+      data %>%
+      filter(POINT_LGL) %>%
+      select(NAME, CATEGORY, SCALE, NEIGHBORHOOD)
+
+    lines <-
+      data %>%
+      filter(LINESTRING_LGL) %>%
+      select(NAME, CATEGORY, SCALE, NEIGHBORHOOD)
+
+    mapview(pts) +
+      mapview(lines)
     })
 
 }

@@ -8,7 +8,7 @@
 \usage{
 tabItemContentUI_map(id, tab_name)
 
-tabItemContent_map(input, output, session)
+tabItemContent_map(input, output, data, session)
 }
 \arguments{
 \item{id}{Output id}
@@ -18,6 +18,8 @@ tabItemContent_map(input, output, session)
 \item{input}{shiny input}
 
 \item{output}{shiny output}
+
+\item{data}{simple feature object to map}
 
 \item{session}{shiny session}
 }

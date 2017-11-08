@@ -1,6 +1,6 @@
 server <- function(input, output, session) {
 
-  callModule(module = tabItemContent_map, id = "map")
+  callModule(module = tabItemContent_map, data = p_sf, id = "map")
   callModule(module = tabItemContent_lists, id = "lists")
   # callModule(module = tabItemContent_projectCard, id = "card")
   # Table module goes here

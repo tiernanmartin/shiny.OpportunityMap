@@ -18,4 +18,5 @@ Imports:
    shmodules (>= 0.0.4-1),
    purrr,
    magrittr,
-   slickR
+   slickR,
+   mapview
