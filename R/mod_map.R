@@ -25,7 +25,10 @@ tabItemContentUI_map <- function(id, tab_name){
           tags$head(tags$style(HTML("section.content{padding:0px;}
                                     .outer { height: calc(100vh - 50px); padding: 0px; margin: 0; }"))),
           tags$div(class = "outer",
-                   leafletOutput(ns("map"),
+                   # leafletOutput(ns("map"),
+                   #               height = "100%",
+                   #               width = "100%")
+                   mapviewOutput(ns("map"),
                                  height = "100%",
                                  width = "100%")
                    )
@@ -38,8 +41,12 @@ tabItemContent_map <- function(input, output, data, session){
 
   ns <- session$ns
 
-  output$map <- renderLeaflet({
-    # shmodules::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
+  # output$map <- renderLeaflet({
+  #   shmodules::myLflt(tile_opts = list(minZoom = 10),chinatown = TRUE)
+  #
+  #   })
+
+  output$map <- renderMapview({
     pts <-
       data %>%
       filter(POINT_LGL) %>%
@@ -52,6 +59,6 @@ tabItemContent_map <- function(input, output, data, session){
 
     mapview(pts) +
       mapview(lines)
-    })
+  })
 
 }
